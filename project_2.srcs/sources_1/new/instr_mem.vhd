@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity instr_mem is
   generic (
@@ -18,6 +19,18 @@ architecture behavioral of instr_mem is
   X"E3A00000", X"E3E01000", X"E0812000", X"E24230FF",
   X"E1A00000", X"EAFFFFF9", X"00000000", X"00000000",
   X"00000000", X"00000000", X"00000000", X"00000000",
+  X"00000000", X"00000000", X"00000000", X"00000000",
+  X"00000000", X"00000000", X"00000000", X"00000000",
+  X"00000000", X"00000000", X"00000000", X"00000000",
+  X"00000000", X"00000000", X"00000000", X"00000000",
+  X"00000000", X"00000000", X"00000000", X"00000000",
+  X"00000000", X"00000000", X"00000000", X"00000000",
+  X"00000000", X"00000000", X"00000000", X"00000000",
+  X"00000000", X"00000000", X"00000000", X"00000000",
+  X"00000000", X"00000000", X"00000000", X"00000000",
+  X"00000000", X"00000000", X"00000000", X"00000000",
+  X"00000000", X"00000000", X"00000000", X"00000000",
+  X"00000000", X"00000000", X"00000000", X"00000000",
   X"00000000", X"00000000", X"00000000", X"00000000");
   -- The corresponding assembly code is:
   -- MAIN PROGGRAM: 
@@ -28,5 +41,5 @@ architecture behavioral of instr_mem is
   -- MOV R0, R0; // NOP
   -- B MAIN PROGRAM
 begin
-
+  data <= ROM(to_integer(unsigned(address)));
 end architecture behavioral;
