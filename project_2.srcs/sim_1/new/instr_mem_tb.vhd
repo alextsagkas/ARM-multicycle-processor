@@ -44,5 +44,5 @@ begin
       wait for 10 ns;
     end loop;
     wait;
-  end process;
+  end process stimuli;
 end architecture sim;

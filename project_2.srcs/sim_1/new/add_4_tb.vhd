@@ -49,5 +49,5 @@ begin
     input_1_tb <= "00000000000000000000000000000011";
     input_2_tb <= "00000000000000000000000000000100";
     wait;
-  end process;
+  end process stimuli;
 end architecture sim;

@@ -58,15 +58,15 @@ begin
     read_data_2  => read_data_2_tb
   );
   -- Clock process
-  clock_process : process
+  clock : process
   begin
     clk_tb <= '1';
     wait for clk_period / 2;
     clk_tb <= '0';
     wait for clk_period / 2;
-  end process clock_process;
+  end process clock;
   -- Stimulus process
-  stimulus : process
+  stimuli : process
   begin
     wait for 100 ns;
     -- PC = 0
@@ -128,5 +128,5 @@ begin
     wait for clk_period / 2;
 
     wait;
-  end process stimulus;
+  end process stimuli;
 end architecture sim;

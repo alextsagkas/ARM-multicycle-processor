@@ -56,5 +56,5 @@ begin
     input_2_tb <= "00000000000000000000000000000011";
     sel_tb     <= '1';
     wait;
-  end process;
+  end process stimuli;
 end architecture sim;
