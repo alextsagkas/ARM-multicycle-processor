@@ -9,7 +9,9 @@ architecture sim of add_4_tb is
   constant N_tb : integer := 32;
   -- Component declaration
   component add_4
-    --   generic (N : integer := 32);
+    -- generic (
+    --   N : integer := 32
+    -- );
     port (
       input_1  : in std_logic_vector(N_tb - 1 downto 0);
       input_2  : in std_logic_vector(N_tb - 1 downto 0);

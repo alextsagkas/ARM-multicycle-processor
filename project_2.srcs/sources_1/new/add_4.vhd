@@ -5,7 +5,9 @@ use ieee.numeric_std.all;
 -- always one of the two inputs is 0x4 to achieve the increment by 4
 -- to the other input
 entity add_4 is
-  generic (N : integer := 32);
+  generic (
+    N : integer := 32
+  );
   port (
     input_1  : in std_logic_vector(N - 1 downto 0);
     input_2  : in std_logic_vector(N - 1 downto 0);

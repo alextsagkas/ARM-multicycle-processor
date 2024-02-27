@@ -2,7 +2,9 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity non_arch_reg_we is
-  generic (N : integer := 32);
+  generic (
+    N : integer := 32
+  );
   port (
     clk : in std_logic;
     we  : in std_logic;
