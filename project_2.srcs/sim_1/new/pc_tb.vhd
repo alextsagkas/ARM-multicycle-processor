@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity pc_tb is
-end pc_tb;
+end entity pc_tb;
 
 architecture sim of pc_tb is
   -- Constant declaration
