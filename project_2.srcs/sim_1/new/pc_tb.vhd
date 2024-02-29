@@ -13,19 +13,19 @@ architecture sim of pc_tb is
     --   N : integer := 32
     -- );
     port (
-      clk   : in std_logic;
-      reset : in std_logic;
-      we    : in std_logic;
-      d     : in std_logic_vector(N_tb - 1 downto 0);
-      q     : out std_logic_vector(N_tb - 1 downto 0)
+      clk : in std_logic;
+      rst : in std_logic;
+      we  : in std_logic;
+      d   : in std_logic_vector(N_tb - 1 downto 0);
+      q   : out std_logic_vector(N_tb - 1 downto 0)
     );
   end component pc;
   -- Signal Declaration
-  signal clk_tb   : std_logic;
-  signal reset_tb : std_logic;
-  signal we_tb    : std_logic;
-  signal d_tb     : std_logic_vector(N_tb - 1 downto 0);
-  signal q_tb     : std_logic_vector(N_tb - 1 downto 0);
+  signal clk_tb : std_logic;
+  signal rst_tb : std_logic;
+  signal we_tb  : std_logic;
+  signal d_tb   : std_logic_vector(N_tb - 1 downto 0);
+  signal q_tb   : std_logic_vector(N_tb - 1 downto 0);
   -- clk period
   constant clk_period : time := 10 ns;
 begin
@@ -35,11 +35,11 @@ begin
   --     N => N_tb
   --   )
   port map(
-    clk   => clk_tb,
-    reset => reset_tb,
-    we    => we_tb,
-    d     => d_tb,
-    q     => q_tb
+    clk => clk_tb,
+    rst => rst_tb,
+    we  => we_tb,
+    d   => d_tb,
+    q   => q_tb
   );
   -- Clock generation
   clock : process
@@ -52,9 +52,9 @@ begin
   -- Stimulus process
   stimuli : process
   begin
-    reset_tb <= '1';
+    rst_tb <= '1';
     wait for 100 ns;
-    reset_tb <= '0';
+    rst_tb <= '0';
     wait for clk_period / 4;
     we_tb <= '1';
     d_tb  <= "00000000000000000000000000000000";
