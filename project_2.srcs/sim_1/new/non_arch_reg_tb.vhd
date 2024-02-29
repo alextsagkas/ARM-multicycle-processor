@@ -14,12 +14,14 @@ architecture sim of non_arch_reg_tb is
     -- );
     port (
       clk : in std_logic;
+      rst : in std_logic;
       d   : in std_logic_vector (N_tb - 1 downto 0);
       q   : out std_logic_vector (N_tb - 1 downto 0)
     );
   end component non_arch_reg;
   -- Signal declaration
   signal clk_tb : std_logic;
+  signal rst_tb : std_logic;
   signal d_tb   : std_logic_vector (N_tb - 1 downto 0);
   signal q_tb   : std_logic_vector (N_tb - 1 downto 0);
   -- clk period
@@ -33,6 +35,7 @@ begin
   port map
   (
     clk => clk_tb,
+    rst => rst_tb,
     d   => d_tb,
     q   => q_tb
   );
@@ -47,7 +50,9 @@ begin
   -- Stimulus process
   stimuli : process
   begin
+    rst_tb <= '1';
     wait for 100 ns;
+    rst_tb <= '0';
     wait for clk_period / 4;
     d_tb <= "00000000000000000000000000000000";
     wait for clk_period;
