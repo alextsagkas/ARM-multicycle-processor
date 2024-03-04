@@ -46,10 +46,10 @@ begin
       if (output_1 /= output_1_correct) then
         assert false
         report
-          "input_1 = 0b" & to_bstring(input_1) & ", " &
-          "input_2 = 0b" & to_bstring(input_2) & " | " &
-          "output_1 = 0b" & to_bstring(output_1) & ", " &
-          "output_1_correct = 0b" & to_bstring(output_1_correct)
+          "input_1 = " & to_bstring(input_1) & ", " &
+          "input_2 = " & to_bstring(input_2) & " | " &
+          "output_1 = " & to_bstring(output_1) & ", " &
+          "output_1_correct = " & to_bstring(output_1_correct)
           severity failure;
       end if;
     end procedure report_errors;

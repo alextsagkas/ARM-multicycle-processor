@@ -18,6 +18,7 @@ architecture sim of alu_tb is
       source_1 : in std_logic_vector(N_tb - 1 downto 0);
       source_2 : in std_logic_vector(N_tb - 1 downto 0);
       shamt5   : in std_logic_vector(4 downto 0);
+      sh       : in std_logic_vector(1 downto 0);
       control  : in std_logic_vector(2 downto 0);
       result   : out std_logic_vector(N_tb - 1 downto 0);
       flags    : out std_logic_vector(3 downto 0) -- N, Z, C, V
@@ -27,6 +28,7 @@ architecture sim of alu_tb is
   signal source_1_tb : std_logic_vector(N_tb - 1 downto 0);
   signal source_2_tb : std_logic_vector(N_tb - 1 downto 0);
   signal shamt5_tb   : std_logic_vector(4 downto 0);
+  signal sh_tb       : std_logic_vector(1 downto 0);
   signal control_tb  : std_logic_vector(2 downto 0);
   signal result_tb   : std_logic_vector(N_tb - 1 downto 0);
   signal flags_tb    : std_logic_vector(3 downto 0);
@@ -40,6 +42,7 @@ begin
     source_1 => source_1_tb,
     source_2 => source_2_tb,
     shamt5   => shamt5_tb,
+    sh       => sh_tb,
     control  => control_tb,
     result   => result_tb,
     flags    => flags_tb
@@ -51,6 +54,7 @@ begin
       source_1       : in std_logic_vector (N_tb - 1 downto 0);
       source_2       : in std_logic_vector (N_tb - 1 downto 0);
       shamt5         : in std_logic_vector (4 downto 0);
+      sh             : in std_logic_vector (1 downto 0);
       control        : in std_logic_vector (2 downto 0);
       result         : in std_logic_vector (N_tb - 1 downto 0);
       result_correct : in std_logic_vector (N_tb - 1 downto 0);
@@ -63,14 +67,15 @@ begin
         ) then
         assert false
         report
-          "source_1 = 0b" & to_bstring(source_1) & ", " &
-          "source_2 = 0b" & to_bstring(source_2) & ", " &
-          "shamt5 = 0b" & to_bstring(shamt5) & ", " &
-          "control = 0b" & to_bstring(control) & " | " &
-          "result = 0b" & to_bstring(result) & ", " &
-          "result_correct = 0b" & to_bstring(result_correct) & " | " &
-          "flags = 0b" & to_bstring(flags) & ", " &
-          "flags_correct = 0b" & to_bstring(flags_correct)
+          "source_1 = " & to_bstring(source_1) & ", " &
+          "source_2 = " & to_bstring(source_2) & ", " &
+          "shamt5 = " & to_bstring(shamt5) & ", " &
+          "sh = " & to_bstring(sh) & ", " &
+          "control = " & to_bstring(control) & " | " &
+          "result = " & to_bstring(result) & ", " &
+          "result_correct = " & to_bstring(result_correct) & " | " &
+          "flags = " & to_bstring(flags) & ", " &
+          "flags_correct = " & to_bstring(flags_correct)
           severity failure;
       end if;
     end procedure report_errors;
@@ -80,6 +85,7 @@ begin
       source_1       : in std_logic_vector (N_tb - 1 downto 0);
       source_2       : in std_logic_vector (N_tb - 1 downto 0);
       shamt5         : in std_logic_vector (4 downto 0);
+      sh             : in std_logic_vector (1 downto 0);
       control        : in std_logic_vector (2 downto 0);
       result_correct : in std_logic_vector (N_tb - 1 downto 0);
       flags_correct  : in std_logic_vector (3 downto 0)) is
@@ -88,6 +94,7 @@ begin
       source_1_tb <= source_1;
       source_2_tb <= source_2;
       shamt5_tb   <= shamt5;
+      sh_tb       <= sh;
       control_tb  <= control;
 
       wait for 15 ns; -- get the timing simulation time to settle the signals
@@ -95,6 +102,7 @@ begin
       source_1       => source_1,
       source_2       => source_2,
       shamt5         => shamt5,
+      sh             => sh,
       control        => control,
       result         => result_tb,
       result_correct => result_correct,
@@ -111,6 +119,7 @@ begin
     source_1       => "01000000000000000000000000000000",
     source_2       => "00100000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "000",
     result_correct => "01100000000000000000000000000000",
     flags_correct  => "0000");
@@ -119,6 +128,7 @@ begin
     source_1       => "01000000000000000000000000000000",
     source_2       => "10100000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "000",
     result_correct => "11100000000000000000000000000000",
     flags_correct  => "1000");
@@ -127,6 +137,7 @@ begin
     source_1       => "00100000000000000000000000000000",
     source_2       => "11100000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "000",
     result_correct => "00000000000000000000000000000000",
     flags_correct  => "0110");
@@ -135,6 +146,7 @@ begin
     source_1       => "01100000000000000000000000000000",
     source_2       => "00100000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "000",
     result_correct => "10000000000000000000000000000000",
     flags_correct  => "1001");
@@ -143,6 +155,7 @@ begin
     source_1       => "10000000000000000000000000000000",
     source_2       => "11100000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "000",
     result_correct => "01100000000000000000000000000000",
     flags_correct  => "0011");
@@ -154,6 +167,7 @@ begin
     source_1       => "01000000000000000000000000000000",
     source_2       => "00100000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "001",
     result_correct => "00100000000000000000000000000000",
     flags_correct  => "0010");
@@ -162,6 +176,7 @@ begin
     source_1       => "00100000000000000000000000000000",
     source_2       => "01100000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "001",
     result_correct => "11000000000000000000000000000000",
     flags_correct  => "1000");
@@ -170,6 +185,7 @@ begin
     source_1       => "00100000000000000000000000000000",
     source_2       => "00100000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "001",
     result_correct => "00000000000000000000000000000000",
     flags_correct  => "0110");
@@ -178,6 +194,7 @@ begin
     source_1       => "01100000000000000000000000000000",
     source_2       => "11100000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "001",
     result_correct => "10000000000000000000000000000000",
     flags_correct  => "1001");
@@ -186,6 +203,7 @@ begin
     source_1       => "10000000000000000000000000000000",
     source_2       => "00100000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "001",
     result_correct => "01100000000000000000000000000000",
     flags_correct  => "0011");
@@ -197,6 +215,7 @@ begin
     source_1       => "10100000000000000000000000000000",
     source_2       => "01100000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "010",
     result_correct => "00100000000000000000000000000000",
     flags_correct  => "0000");
@@ -205,6 +224,7 @@ begin
     source_1       => "00000000000000000000000000000000",
     source_2       => "11100000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "010",
     result_correct => "00000000000000000000000000000000",
     flags_correct  => "0100");
@@ -213,6 +233,7 @@ begin
     source_1       => "10100000000000000000000000000000",
     source_2       => "10000000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "010",
     result_correct => "10000000000000000000000000000000",
     flags_correct  => "1000");
@@ -224,6 +245,7 @@ begin
     source_1       => "11100000000000000000000000000000",
     source_2       => "10100000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "011",
     result_correct => "01000000000000000000000000000000",
     flags_correct  => "0000");
@@ -232,6 +254,7 @@ begin
     source_1       => "11100000000000000000000000000000",
     source_2       => "11100000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "011",
     result_correct => "00000000000000000000000000000000",
     flags_correct  => "0100");
@@ -240,17 +263,19 @@ begin
     source_1       => "01000000000000000000000000000000",
     source_2       => "11100000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "011",
     result_correct => "10100000000000000000000000000000",
     flags_correct  => "1000");
 
-    -- MOV & NOP --
+    -- Shifts --
 
     -- MOV
     test(
     source_1       => "00000000000000000000000000000000",
     source_2       => "01000000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "100",
     result_correct => "01000000000000000000000000000000",
     flags_correct  => "0000");
@@ -259,8 +284,59 @@ begin
     source_1       => "00000000000000000000000000000000",
     source_2       => "00000000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "100",
     result_correct => "00000000000000000000000000000000",
+    flags_correct  => "0000");
+    -- LSL
+    test(
+    source_1       => "00000000000000000000000000000000",
+    source_2       => "00100000000000000000000000000000",
+    shamt5         => "00001",
+    sh             => "00",
+    control        => "100",
+    result_correct => "01000000000000000000000000000000",
+    flags_correct  => "0000");
+    test(
+    source_1       => "00000000000000000000000000000000",
+    source_2       => "00100000000000000000000000000000",
+    shamt5         => "00010",
+    sh             => "00",
+    control        => "100",
+    result_correct => "10000000000000000000000000000000",
+    flags_correct  => "0000");
+    test(
+    source_1       => "00000000000000000000000000000000",
+    source_2       => "00100000000000000000000000000000",
+    shamt5         => "00011",
+    sh             => "00",
+    control        => "100",
+    result_correct => "00000000000000000000000000000000",
+    flags_correct  => "0000");
+    -- ASR
+    test(
+    source_1       => "00000000000000000000000000000000",
+    source_2       => "10000000000000000000000000000000",
+    shamt5         => "00001",
+    sh             => "10",
+    control        => "100",
+    result_correct => "11000000000000000000000000000000",
+    flags_correct  => "0000");
+    test(
+    source_1       => "00000000000000000000000000000000",
+    source_2       => "10000000000000000000000000000000",
+    shamt5         => "00010",
+    sh             => "10",
+    control        => "100",
+    result_correct => "11100000000000000000000000000000",
+    flags_correct  => "0000");
+    test(
+    source_1       => "00000000000000000000000000000000",
+    source_2       => "10000000000000000000000000000000",
+    shamt5         => "00011",
+    sh             => "10",
+    control        => "100",
+    result_correct => "11110000000000000000000000000000",
     flags_correct  => "0000");
 
     -- MVN --
@@ -269,55 +345,9 @@ begin
     source_1       => "00000000000000000000000000000000",
     source_2       => "10000000000000000000000000000000",
     shamt5         => "00000",
+    sh             => "00",
     control        => "101",
     result_correct => "01111111111111111111111111111111",
-    flags_correct  => "0000");
-
-    -- Logical Operations --
-
-    -- LSL
-    test(
-    source_1       => "00000000000000000000000000000000",
-    source_2       => "00100000000000000000000000000000",
-    shamt5         => "00001",
-    control        => "110",
-    result_correct => "01000000000000000000000000000000",
-    flags_correct  => "0000");
-    test(
-    source_1       => "00000000000000000000000000000000",
-    source_2       => "00100000000000000000000000000000",
-    shamt5         => "00010",
-    control        => "110",
-    result_correct => "10000000000000000000000000000000",
-    flags_correct  => "0000");
-    test(
-    source_1       => "00000000000000000000000000000000",
-    source_2       => "00100000000000000000000000000000",
-    shamt5         => "00011",
-    control        => "110",
-    result_correct => "00000000000000000000000000000000",
-    flags_correct  => "0000");
-    -- ASR
-    test(
-    source_1       => "00000000000000000000000000000000",
-    source_2       => "10000000000000000000000000000000",
-    shamt5         => "00001",
-    control        => "111",
-    result_correct => "11000000000000000000000000000000",
-    flags_correct  => "0000");
-    test(
-    source_1       => "00000000000000000000000000000000",
-    source_2       => "10000000000000000000000000000000",
-    shamt5         => "00010",
-    control        => "111",
-    result_correct => "11100000000000000000000000000000",
-    flags_correct  => "0000");
-    test(
-    source_1       => "00000000000000000000000000000000",
-    source_2       => "10000000000000000000000000000000",
-    shamt5         => "00011",
-    control        => "111",
-    result_correct => "11110000000000000000000000000000",
     flags_correct  => "0000");
 
     report "Testbench finished successfully!";

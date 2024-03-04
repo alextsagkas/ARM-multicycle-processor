@@ -10,6 +10,7 @@ entity alu is
     source_1 : in std_logic_vector(N - 1 downto 0);
     source_2 : in std_logic_vector(N - 1 downto 0);
     shamt5   : in std_logic_vector(4 downto 0);
+    sh       : in std_logic_vector(1 downto 0);
     control  : in std_logic_vector(2 downto 0);
     result   : out std_logic_vector(N - 1 downto 0);
     flags    : out std_logic_vector(3 downto 0) -- N, Z, C, V
@@ -23,7 +24,7 @@ begin
     variable source_1_v : signed (N + 1 downto 0);
     variable source_2_v : signed (N + 1 downto 0);
     variable result_v   : signed (N + 1 downto 0);
-    -- And & XOR
+    -- AND & XOR
     variable tmp : std_logic_vector(N - 1 downto 0);
   begin
     -- Initialize flags to avoid latches
@@ -123,24 +124,35 @@ begin
           flags(3) <= '0';
         end if;
 
-        -- MOV & NOP (S=0)
+        -- Shifts --
       when "100" =>
-        result <= source_2;
+        shifts : case sh is
+            -- MOV | LSL (S=0)
+          when "00" =>
+            MOV_LSL : case shamt5 is
+                -- MOV & NOP (S=0)
+              when "00000" =>
+                result <= source_2;
+                -- LSL (S=0)
+              when others =>
+                result <= std_logic_vector(
+                  shift_left(signed(source_2), to_integer(unsigned(shamt5))));
+            end case MOV_LSL;
+            -- ASR (S=0)
+          when "10" =>
+            result <= std_logic_vector(shift_right(signed(source_2), to_integer(unsigned(shamt5))));
+            -- Others
+          when others       =>
+            result <= (others => '0');
+        end case shifts;
 
         -- MVN (S=0)
       when "101" =>
         result <= not source_2;
 
-        -- LSL (S=0)
-      when "110" =>
-        result <= std_logic_vector(shift_left(signed(source_2), to_integer(unsigned(shamt5))));
-
-        -- ASR (S=0)
-      when "111" =>
-        result <= std_logic_vector(shift_right(signed(source_2), to_integer(unsigned(shamt5))));
-
         -- When others do nothing
-      when others => null;
+      when others       =>
+        result <= (others => '0');
 
     end case;
   end process;
