@@ -69,6 +69,7 @@ begin
   stimuli : process
   begin
     wait for 100 ns;
+    ------------------------- Write Logic -------------------------
     -- PC = 0
     R15_tb <= (others => '0');
 
@@ -94,21 +95,12 @@ begin
 
     wait for clk_period / 2;
     -- Write logic
-    we_3_tb         <= '0';
+    we_3_tb         <= '1';
     address_3_tb    <= "0010";
     write_data_3_tb <= "00000000000000000000000000000010";
     wait for clk_period / 2;
 
-    -- PC = 12
-    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
-
-    wait for clk_period / 2;
-    -- Read logic
-    address_1_tb <= "0000";
-    address_2_tb <= "0001";
-    wait for clk_period / 2;
-
-    -- PC = 16
+    -- PC = 12 
     R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
 
     wait for clk_period / 2;
@@ -118,13 +110,196 @@ begin
     write_data_3_tb <= "00000000000000000000000000000011";
     wait for clk_period / 2;
 
+    -- PC = 16
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb         <= '1';
+    address_3_tb    <= "0100";
+    write_data_3_tb <= "00000000000000000000000000000100";
+    wait for clk_period / 2;
+
     -- PC = 20
     R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
 
     wait for clk_period / 2;
-    -- Read logic
-    address_1_tb <= "1111";
-    address_2_tb <= "0010";
+    -- Write logic
+    we_3_tb         <= '1';
+    address_3_tb    <= "0101";
+    write_data_3_tb <= "00000000000000000000000000000101";
+    wait for clk_period / 2;
+
+    -- PC = 24
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb         <= '1';
+    address_3_tb    <= "0110";
+    write_data_3_tb <= "00000000000000000000000000000110";
+    wait for clk_period / 2;
+
+    -- PC =  28
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb         <= '1';
+    address_3_tb    <= "0111";
+    write_data_3_tb <= "00000000000000000000000000000111";
+    wait for clk_period / 2;
+
+    -- PC = 32
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb         <= '1';
+    address_3_tb    <= "1000";
+    write_data_3_tb <= "00000000000000000000000000001000";
+    wait for clk_period / 2;
+
+    -- PC = 36
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb         <= '1';
+    address_3_tb    <= "1001";
+    write_data_3_tb <= "00000000000000000000000000001001";
+    wait for clk_period / 2;
+
+    -- PC = 40
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb         <= '1';
+    address_3_tb    <= "1010";
+    write_data_3_tb <= "00000000000000000000000000001010";
+    wait for clk_period / 2;
+
+    -- PC = 44
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb         <= '1';
+    address_3_tb    <= "1011";
+    write_data_3_tb <= "00000000000000000000000000001011";
+    wait for clk_period / 2;
+
+    -- PC = 48
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb         <= '1';
+    address_3_tb    <= "1100";
+    write_data_3_tb <= "00000000000000000000000000001100";
+    wait for clk_period / 2;
+
+    -- PC = 52
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb         <= '1';
+    address_3_tb    <= "1101";
+    write_data_3_tb <= "00000000000000000000000000001101";
+    wait for clk_period / 2;
+
+    -- PC = 56
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb         <= '1';
+    address_3_tb    <= "1110";
+    write_data_3_tb <= "00000000000000000000000000001110";
+    wait for clk_period / 2;
+
+    -------------------------- Read Logic --------------------------
+
+    -- PC = 60
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb      <= '0';
+    address_1_tb <= "0000";
+    address_2_tb <= "0001";
+    wait for clk_period / 2;
+
+    -- PC = 64
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb      <= '0';
+    address_1_tb <= "0010";
+    address_2_tb <= "0011";
+    wait for clk_period / 2;
+
+    -- PC = 68
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb      <= '0';
+    address_1_tb <= "0100";
+    address_2_tb <= "0101";
+    wait for clk_period / 2;
+
+    -- PC = 72
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb      <= '0';
+    address_1_tb <= "0110";
+    address_2_tb <= "0111";
+    wait for clk_period / 2;
+
+    -- PC = 76
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb      <= '0';
+    address_1_tb <= "1000";
+    address_2_tb <= "1001";
+    wait for clk_period / 2;
+
+    -- PC = 80
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb      <= '0';
+    address_1_tb <= "1010";
+    address_2_tb <= "1011";
+    wait for clk_period / 2;
+
+    -- PC = 84
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb      <= '0';
+    address_1_tb <= "1100";
+    address_2_tb <= "1101";
+    wait for clk_period / 2;
+
+    -- PC =  88
+    R15_tb <= std_logic_vector(unsigned(R15_tb) + 4);
+
+    wait for clk_period / 2;
+    -- Write logic
+    we_3_tb      <= '0';
+    address_1_tb <= "1110";
+    address_2_tb <= "1111";
     wait for clk_period / 2;
 
     wait;
