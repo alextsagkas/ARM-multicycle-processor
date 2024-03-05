@@ -8,7 +8,7 @@ entity processor is
   port (
     clk        : in std_logic;
     reset      : in std_logic;
-    pc         : out std_logic_vector(N - 1 downto 0);
+    pc         : out std_logic_vector(7 downto 0);
     instr      : out std_logic_vector(N - 1 downto 0);
     alu_result : out std_logic_vector(N - 1 downto 0);
     write_data : out std_logic_vector(N - 1 downto 0);
@@ -152,7 +152,7 @@ begin
   );
 
   -- Output Assignment
-  pc         <= DATAPATH_pc_value;
+  pc         <= DATAPATH_pc_value(7 downto 0);
   instr      <= DATAPATH_instr;
   alu_result <= DATAPATH_alu_result;
   write_data <= DATAPATH_write_data;
