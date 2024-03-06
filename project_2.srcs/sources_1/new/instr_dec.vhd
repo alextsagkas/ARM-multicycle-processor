@@ -208,7 +208,7 @@ begin
         no_write_in <= '0';
         -- STR
       when "01011000" =>
-        reg_src     <= "0-0";
+        reg_src     <= "-10";
         alu_src     <= '1';
         imm_src     <= "01";
         alu_control <= "000";
@@ -216,7 +216,7 @@ begin
         no_write_in <= '0';
         -- STR
       when "01010000" =>
-        reg_src     <= "0-0";
+        reg_src     <= "-10";
         alu_src     <= '1';
         imm_src     <= "01";
         alu_control <= "001";

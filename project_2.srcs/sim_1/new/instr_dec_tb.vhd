@@ -289,7 +289,7 @@ begin
     test(
     op                  => "01",
     funct               => "011000",
-    reg_src_correct     => "0-0",
+    reg_src_correct     => "-10",
     alu_src_correct     => '1',
     imm_src_correct     => "01",
     alu_control_correct => "000",
@@ -299,7 +299,7 @@ begin
     test(
     op                  => "01",
     funct               => "010000",
-    reg_src_correct     => "0-0",
+    reg_src_correct     => "-10",
     alu_src_correct     => '1',
     imm_src_correct     => "01",
     alu_control_correct => "001",
