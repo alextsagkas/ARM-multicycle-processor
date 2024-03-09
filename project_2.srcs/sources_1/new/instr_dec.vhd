@@ -10,7 +10,8 @@ entity instr_dec is
     imm_src     : out std_logic_vector(1 downto 0);
     alu_control : out std_logic_vector(2 downto 0);
     mem_to_reg  : out std_logic;
-    no_write_in : out std_logic
+    no_write_in : out std_logic;
+    bl_in       : out std_logic
   );
 end entity instr_dec;
 
@@ -30,6 +31,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "00101001" =>
         reg_src     <= "0-0";
         alu_src     <= '1';
@@ -37,6 +39,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
         -- ADD
       when "00001000" =>
         reg_src     <= "000";
@@ -45,6 +48,7 @@ begin
           alu_control <= "000";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "00001001" =>
         reg_src     <= "000";
         alu_src     <= '0';
@@ -52,6 +56,7 @@ begin
           alu_control <= "000";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
         -- SUB
       when "00100100" =>
         reg_src     <= "0-0";
@@ -60,6 +65,7 @@ begin
         alu_control <= "001";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "00100101" =>
         reg_src     <= "0-0";
         alu_src     <= '1';
@@ -67,6 +73,7 @@ begin
         alu_control <= "001";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
         -- SUB
       when "00000100" =>
         reg_src     <= "000";
@@ -75,6 +82,7 @@ begin
           alu_control <= "001";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "00000101" =>
         reg_src     <= "000";
         alu_src     <= '0';
@@ -82,6 +90,7 @@ begin
           alu_control <= "001";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
         -- CMP
       when "00110101" =>
         reg_src     <= "0-0";
@@ -90,6 +99,7 @@ begin
         alu_control <= "001";
         mem_to_reg  <= '-';
         no_write_in <= '1';
+        bl_in       <= '0';
         -- CMP
       when "00010101" =>
         reg_src     <= "000";
@@ -98,6 +108,7 @@ begin
           alu_control <= "001";
         mem_to_reg  <= '-';
         no_write_in <= '1';
+        bl_in       <= '0';
         -- AND
       when "00100000" =>
         reg_src     <= "0-0";
@@ -106,6 +117,7 @@ begin
         alu_control <= "010";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "00100001" =>
         reg_src     <= "0-0";
         alu_src     <= '1';
@@ -113,6 +125,7 @@ begin
         alu_control <= "010";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
         -- AND
       when "00000000" =>
         reg_src     <= "000";
@@ -121,6 +134,7 @@ begin
           alu_control <= "010";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "00000001" =>
         reg_src     <= "000";
         alu_src     <= '0';
@@ -128,6 +142,7 @@ begin
           alu_control <= "010";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
         -- XOR
       when "00100010" =>
         reg_src     <= "0-0";
@@ -136,6 +151,7 @@ begin
         alu_control <= "011";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "00100011" =>
         reg_src     <= "0-0";
         alu_src     <= '1';
@@ -143,6 +159,7 @@ begin
         alu_control <= "011";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
         -- XOR
       when "00000010" =>
         reg_src     <= "000";
@@ -151,6 +168,7 @@ begin
           alu_control <= "011";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "00000011" =>
         reg_src     <= "000";
         alu_src     <= '0';
@@ -158,6 +176,7 @@ begin
           alu_control <= "011";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
         -- MOV / NOP
       when "00111010" =>
         reg_src     <= "0--";
@@ -166,6 +185,7 @@ begin
         alu_control <= "100";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
         -- MOV / NOP / LSL / ASR
       when "00011010" =>
         reg_src     <= "00-";
@@ -174,6 +194,7 @@ begin
           alu_control <= "100";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
         -- MVN
       when "00111110" =>
         reg_src     <= "0--";
@@ -182,6 +203,7 @@ begin
         alu_control <= "101";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
         -- MVN
       when "00011110" =>
         reg_src     <= "00-";
@@ -190,6 +212,7 @@ begin
           alu_control <= "101";
         mem_to_reg  <= '0';
         no_write_in <= '0';
+        bl_in       <= '0';
         -- LDR
       when "01011001" =>
         reg_src     <= "0-0";
@@ -198,6 +221,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '1';
         no_write_in <= '0';
+        bl_in       <= '0';
         -- LDR
       when "01010001" =>
         reg_src     <= "0-0";
@@ -206,6 +230,7 @@ begin
         alu_control <= "001";
         mem_to_reg  <= '1';
         no_write_in <= '0';
+        bl_in       <= '0';
         -- STR
       when "01011000" =>
         reg_src     <= "-10";
@@ -214,6 +239,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
         -- STR
       when "01010000" =>
         reg_src     <= "-10";
@@ -222,6 +248,7 @@ begin
         alu_control <= "001";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
         -- B
       when "10100000" =>
         reg_src     <= "--1";
@@ -230,6 +257,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "10100001" =>
         reg_src     <= "--1";
           alu_src     <= '1';
@@ -237,6 +265,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "10100010" =>
         reg_src     <= "--1";
           alu_src     <= '1';
@@ -244,6 +273,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "10100011" =>
         reg_src     <= "--1";
           alu_src     <= '1';
@@ -251,6 +281,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "10100100" =>
         reg_src     <= "--1";
           alu_src     <= '1';
@@ -258,6 +289,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "10100101" =>
         reg_src     <= "--1";
           alu_src     <= '1';
@@ -265,6 +297,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "10100110" =>
         reg_src     <= "--1";
           alu_src     <= '1';
@@ -272,6 +305,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "10100111" =>
         reg_src     <= "--1";
           alu_src     <= '1';
@@ -279,6 +313,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "10101000" =>
         reg_src     <= "--1";
           alu_src     <= '1';
@@ -286,6 +321,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "10101001" =>
         reg_src     <= "--1";
           alu_src     <= '1';
@@ -293,6 +329,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "10101010" =>
         reg_src     <= "--1";
           alu_src     <= '1';
@@ -300,6 +337,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "10101011" =>
         reg_src     <= "--1";
           alu_src     <= '1';
@@ -307,6 +345,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "10101100" =>
         reg_src     <= "--1";
           alu_src     <= '1';
@@ -314,6 +353,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "10101101" =>
         reg_src     <= "--1";
           alu_src     <= '1';
@@ -321,6 +361,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "10101110" =>
         reg_src     <= "--1";
           alu_src     <= '1';
@@ -328,6 +369,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
       when "10101111" =>
         reg_src     <= "--1";
           alu_src     <= '1';
@@ -335,6 +377,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '0';
         -- BL
       when "10110000" =>
         reg_src     <= "1-1";
@@ -343,6 +386,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '1';
       when "10110001" =>
         reg_src     <= "1-1";
         alu_src     <= '1';
@@ -350,6 +394,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '1';
       when "10110010" =>
         reg_src     <= "1-1";
         alu_src     <= '1';
@@ -357,6 +402,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '1';
       when "10110011" =>
         reg_src     <= "1-1";
         alu_src     <= '1';
@@ -364,6 +410,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '1';
       when "10110100" =>
         reg_src     <= "1-1";
         alu_src     <= '1';
@@ -371,6 +418,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '1';
       when "10110101" =>
         reg_src     <= "1-1";
         alu_src     <= '1';
@@ -378,6 +426,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '1';
       when "10110110" =>
         reg_src     <= "1-1";
         alu_src     <= '1';
@@ -385,6 +434,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '1';
       when "10110111" =>
         reg_src     <= "1-1";
         alu_src     <= '1';
@@ -392,6 +442,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '1';
       when "10111000" =>
         reg_src     <= "1-1";
         alu_src     <= '1';
@@ -399,6 +450,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '1';
       when "10111001" =>
         reg_src     <= "1-1";
         alu_src     <= '1';
@@ -406,6 +458,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '1';
       when "10111010" =>
         reg_src     <= "1-1";
         alu_src     <= '1';
@@ -413,6 +466,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '1';
       when "10111011" =>
         reg_src     <= "1-1";
         alu_src     <= '1';
@@ -420,6 +474,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '1';
       when "10111100" =>
         reg_src     <= "1-1";
         alu_src     <= '1';
@@ -427,6 +482,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '1';
       when "10111101" =>
         reg_src     <= "1-1";
         alu_src     <= '1';
@@ -434,6 +490,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '1';
       when "10111110" =>
         reg_src     <= "1-1";
         alu_src     <= '1';
@@ -441,6 +498,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '1';
       when "10111111" =>
         reg_src     <= "1-1";
         alu_src     <= '1';
@@ -448,6 +506,7 @@ begin
         alu_control <= "000";
         mem_to_reg  <= '-';
         no_write_in <= '0';
+        bl_in       <= '1';
         -- OTHERS
       when others =>
         reg_src     <= "---";
@@ -456,6 +515,7 @@ begin
           alu_control <= "---";
           mem_to_reg  <= '-';
         no_write_in <= '-';
+        bl_in       <= '-';
     end case;
 
   end process;

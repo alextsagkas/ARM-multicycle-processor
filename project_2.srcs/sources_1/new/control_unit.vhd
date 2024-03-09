@@ -38,7 +38,8 @@ architecture structural of control_unit is
       imm_src     : out std_logic_vector(1 downto 0);
       alu_control : out std_logic_vector(2 downto 0);
       mem_to_reg  : out std_logic;
-      no_write_in : out std_logic
+      no_write_in : out std_logic;
+      bl_in       : out std_logic
     );
   end component instr_dec;
   component fsm is
@@ -49,6 +50,7 @@ architecture structural of control_unit is
       s_or_l      : in std_logic;
       r_d         : in std_logic_vector(3 downto 0);
       no_write_in : in std_logic;
+      bl_in       : in std_logic;
       cond_ex_in  : in std_logic;
       ir_write    : out std_logic;
       reg_write   : out std_logic;
@@ -68,6 +70,7 @@ architecture structural of control_unit is
   end component cond_logic;
   -- Singal Declaration
   signal no_write_in : std_logic;
+  signal bl_in       : std_logic;
   signal cond_ex_in  : std_logic;
 begin
   -- Component Instantiation
@@ -82,7 +85,8 @@ begin
     imm_src     => imm_src,
     alu_control => alu_control,
     mem_to_reg  => mem_to_reg,
-    no_write_in => no_write_in
+    no_write_in => no_write_in,
+    bl_in       => bl_in
   );
   finite_state_machine : fsm
   port map(
@@ -93,6 +97,7 @@ begin
     s_or_l      => ir(20),
     r_d         => ir(15 downto 12),
     no_write_in => no_write_in,
+    bl_in       => bl_in,
     cond_ex_in  => cond_ex_in,
     -- Outputs
     ir_write    => ir_write,

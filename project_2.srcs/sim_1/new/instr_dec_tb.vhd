@@ -17,7 +17,8 @@ architecture sim of instr_dec_tb is
       imm_src     : out std_logic_vector(1 downto 0);
       alu_control : out std_logic_vector(2 downto 0);
       mem_to_reg  : out std_logic;
-      no_write_in : out std_logic
+      no_write_in : out std_logic;
+      bl_in       : out std_logic
     );
   end component instr_dec;
   -- Signal declaration
@@ -29,6 +30,7 @@ architecture sim of instr_dec_tb is
   signal alu_control_tb : std_logic_vector(2 downto 0);
   signal mem_to_reg_tb  : std_logic;
   signal no_write_in_tb : std_logic;
+  signal bl_in_tb       : std_logic;
 begin
   -- Instantiate unit under test
   utt : instr_dec
@@ -40,7 +42,8 @@ begin
     imm_src     => imm_src_tb,
     alu_control => alu_control_tb,
     mem_to_reg  => mem_to_reg_tb,
-    no_write_in => no_write_in_tb
+    no_write_in => no_write_in_tb,
+    bl_in       => bl_in_tb
   );
 
   -- Stimulus process
@@ -61,7 +64,9 @@ begin
       mem_to_reg          : in std_logic;
       mem_to_reg_correct  : in std_logic;
       no_write_in         : in std_logic;
-      no_write_in_correct : in std_logic) is
+      no_write_in_correct : in std_logic;
+      bl_in               : in std_logic;
+      bl_in_correct       : in std_logic) is
     begin
       if (
         compare_dont_care(reg_src, reg_src_correct) or
@@ -69,7 +74,8 @@ begin
         compare_dont_care(imm_src, imm_src_correct) or
         compare_dont_care(alu_control, alu_control_correct) or
         compare_dont_care(mem_to_reg, mem_to_reg_correct) or
-        compare_dont_care(no_write_in, no_write_in_correct)) then
+        compare_dont_care(no_write_in, no_write_in_correct) or
+        compare_dont_care(bl_in, bl_in_correct)) then
         assert false
         report
           "op = " & to_bstring(op) & ", " &
@@ -85,7 +91,9 @@ begin
           "mem_to_reg = " & to_bstring(mem_to_reg) & ", " &
           "mem_to_reg_correct = " & to_bstring(mem_to_reg_correct) & " | " &
           "no_write_in = " & to_bstring(no_write_in) & " | " &
-          "no_write_in_correct = " & to_bstring(no_write_in_correct)
+          "no_write_in_correct = " & to_bstring(no_write_in_correct) &
+          "bl_in = " & to_bstring(bl_in) & ", " &
+          "bl_in_correct = " & to_bstring(bl_in_correct)
           severity failure;
       end if;
     end procedure report_errors;
@@ -99,7 +107,8 @@ begin
       imm_src_correct     : in std_logic_vector(1 downto 0);
       alu_control_correct : in std_logic_vector(2 downto 0);
       mem_to_reg_correct  : in std_logic;
-      no_write_in_correct : in std_logic) is
+      no_write_in_correct : in std_logic;
+      bl_in_correct       : in std_logic) is
     begin
       wait for 10 ns;
       op_tb    <= op;
@@ -120,7 +129,9 @@ begin
       mem_to_reg          => mem_to_reg_tb,
       mem_to_reg_correct  => mem_to_reg_correct,
       no_write_in         => no_write_in_tb,
-      no_write_in_correct => no_write_in_correct);
+      no_write_in_correct => no_write_in_correct,
+      bl_in               => bl_in_tb,
+      bl_in_correct       => bl_in_correct);
     end procedure test;
   begin
     wait for 100 ns;
@@ -134,7 +145,8 @@ begin
     imm_src_correct     => "00",
     alu_control_correct => "000",
     mem_to_reg_correct  => '0',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '0');
     -- ADD
     test(
     op                  => "00",
@@ -144,7 +156,8 @@ begin
     imm_src_correct     => "--",
     alu_control_correct => "000",
     mem_to_reg_correct  => '0',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '0');
     -- SUB
     test(
     op                  => "00",
@@ -154,7 +167,8 @@ begin
     imm_src_correct     => "00",
     alu_control_correct => "001",
     mem_to_reg_correct  => '0',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '0');
     -- SUB
     test(
     op                  => "00",
@@ -164,7 +178,8 @@ begin
     imm_src_correct     => "--",
     alu_control_correct => "001",
     mem_to_reg_correct  => '0',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '0');
     -- CMP
     test(
     op                  => "00",
@@ -174,7 +189,8 @@ begin
     imm_src_correct     => "00",
     alu_control_correct => "001",
     mem_to_reg_correct  => '-',
-    no_write_in_correct => '1');
+    no_write_in_correct => '1',
+    bl_in_correct       => '0');
     -- CMP
     test(
     op                  => "00",
@@ -184,7 +200,8 @@ begin
     imm_src_correct     => "--",
     alu_control_correct => "001",
     mem_to_reg_correct  => '-',
-    no_write_in_correct => '1');
+    no_write_in_correct => '1',
+    bl_in_correct       => '0');
     -- AND
     test(
     op                  => "00",
@@ -194,7 +211,8 @@ begin
     imm_src_correct     => "00",
     alu_control_correct => "010",
     mem_to_reg_correct  => '0',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '0');
     -- AND
     test(
     op                  => "00",
@@ -204,7 +222,8 @@ begin
     imm_src_correct     => "--",
     alu_control_correct => "010",
     mem_to_reg_correct  => '0',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '0');
     -- XOR
     test(
     op                  => "00",
@@ -214,7 +233,8 @@ begin
     imm_src_correct     => "00",
     alu_control_correct => "011",
     mem_to_reg_correct  => '0',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '0');
     -- XOR
     test(
     op                  => "00",
@@ -224,7 +244,8 @@ begin
     imm_src_correct     => "--",
     alu_control_correct => "011",
     mem_to_reg_correct  => '0',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '0');
     -- MOV / NOP
     test(
     op                  => "00",
@@ -234,7 +255,8 @@ begin
     imm_src_correct     => "00",
     alu_control_correct => "100",
     mem_to_reg_correct  => '0',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '0');
     -- MOV / NOP / LSL / ASR
     test(
     op                  => "00",
@@ -244,7 +266,8 @@ begin
     imm_src_correct     => "--",
     alu_control_correct => "100",
     mem_to_reg_correct  => '0',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '0');
     -- MVN
     test(
     op                  => "00",
@@ -254,7 +277,8 @@ begin
     imm_src_correct     => "00",
     alu_control_correct => "101",
     mem_to_reg_correct  => '0',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '0');
     -- MVN
     test(
     op                  => "00",
@@ -264,7 +288,8 @@ begin
     imm_src_correct     => "--",
     alu_control_correct => "101",
     mem_to_reg_correct  => '0',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '0');
     -- LDR
     test(
     op                  => "01",
@@ -274,7 +299,8 @@ begin
     imm_src_correct     => "01",
     alu_control_correct => "000",
     mem_to_reg_correct  => '1',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '0');
     -- LDR
     test(
     op                  => "01",
@@ -284,7 +310,8 @@ begin
     imm_src_correct     => "01",
     alu_control_correct => "001",
     mem_to_reg_correct  => '1',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '0');
     -- STR
     test(
     op                  => "01",
@@ -294,7 +321,8 @@ begin
     imm_src_correct     => "01",
     alu_control_correct => "000",
     mem_to_reg_correct  => '-',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '0');
     -- STR
     test(
     op                  => "01",
@@ -304,7 +332,8 @@ begin
     imm_src_correct     => "01",
     alu_control_correct => "001",
     mem_to_reg_correct  => '-',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '0');
     -- B
     test(
     op                  => "10",
@@ -314,7 +343,8 @@ begin
     imm_src_correct     => "10",
     alu_control_correct => "000",
     mem_to_reg_correct  => '-',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '0');
     -- BL
     test(
     op                  => "10",
@@ -324,7 +354,8 @@ begin
     imm_src_correct     => "10",
     alu_control_correct => "000",
     mem_to_reg_correct  => '-',
-    no_write_in_correct => '0');
+    no_write_in_correct => '0',
+    bl_in_correct       => '1');
     report "Testbench finished successfully!";
 
     wait;
