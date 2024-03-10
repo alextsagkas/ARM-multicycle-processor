@@ -723,7 +723,17 @@ begin
             next_state <= S4g;
             -- Outputs
             ------------ CMP ------------
+          when "0000000111" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
           when "0000001101" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
+          when "0000001111" =>
             -- Next State
             next_state <= S4g;
             -- Outputs
@@ -733,7 +743,17 @@ begin
             next_state <= S4g;
             -- Outputs
             ------------ CMP ------------
+          when "0000010111" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
           when "0000011101" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
+          when "0000011111" =>
             -- Next State
             next_state <= S4g;
             -- Outputs
@@ -743,7 +763,17 @@ begin
             next_state <= S4g;
             -- Outputs
             ------------ CMP ------------
+          when "0000100111" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
           when "0000101101" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
+          when "0000101111" =>
             -- Next State
             next_state <= S4g;
             -- Outputs
@@ -753,7 +783,17 @@ begin
             next_state <= S4g;
             -- Outputs
             ------------ CMP ------------
+          when "0000110111" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
           when "0000111101" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
+          when "0000111111" =>
             -- Next State
             next_state <= S4g;
             -- Outputs
@@ -763,7 +803,17 @@ begin
             next_state <= S4g;
             -- Outputs
             ------------ CMP ------------
+          when "0001000111" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
           when "0001001101" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
+          when "0001001111" =>
             -- Next State
             next_state <= S4g;
             -- Outputs
@@ -773,7 +823,17 @@ begin
             next_state <= S4g;
             -- Outputs
             ------------ CMP ------------
+          when "0001010111" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
           when "0001011101" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
+          when "0001011111" =>
             -- Next State
             next_state <= S4g;
             -- Outputs
@@ -783,7 +843,17 @@ begin
             next_state <= S4g;
             -- Outputs
             ------------ CMP ------------
+          when "0001100111" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
           when "0001101101" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
+          when "0001101111" =>
             -- Next State
             next_state <= S4g;
             -- Outputs
@@ -793,7 +863,17 @@ begin
             next_state <= S4g;
             -- Outputs
             ------------ CMP ------------
+          when "0001110111" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
           when "0001111101" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
+          when "0001111111" =>
             -- Next State
             next_state <= S4g;
             -- Outputs
@@ -803,7 +883,17 @@ begin
             next_state <= S4g;
             -- Outputs
             ------------ CMP ------------
+          when "0010000111" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
           when "0010001101" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
+          when "0010001111" =>
             -- Next State
             next_state <= S4g;
             -- Outputs
@@ -813,7 +903,17 @@ begin
             next_state <= S4g;
             -- Outputs
             ------------ CMP ------------
+          when "0010010111" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
           when "0010011101" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
+          when "0010011111" =>
             -- Next State
             next_state <= S4g;
             -- Outputs
@@ -823,7 +923,17 @@ begin
             next_state <= S4g;
             -- Outputs
             ------------ CMP ------------
+          when "0010100111" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
           when "0010101101" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
+          when "0010101111" =>
             -- Next State
             next_state <= S4g;
             -- Outputs
@@ -833,7 +943,17 @@ begin
             next_state <= S4g;
             -- Outputs
             ------------ CMP ------------
+          when "0010110111" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
           when "0010111101" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
+          when "0010111111" =>
             -- Next State
             next_state <= S4g;
             -- Outputs
@@ -843,7 +963,17 @@ begin
             next_state <= S4g;
             -- Outputs
             ------------ CMP ------------
+          when "0011000111" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
           when "0011001101" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
+          when "0011001111" =>
             -- Next State
             next_state <= S4g;
             -- Outputs
@@ -853,7 +983,17 @@ begin
             next_state <= S4g;
             -- Outputs
             ------------ CMP ------------
+          when "0011010111" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
           when "0011011101" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
+          when "0011011111" =>
             -- Next State
             next_state <= S4g;
             -- Outputs
@@ -863,7 +1003,17 @@ begin
             next_state <= S4g;
             -- Outputs
             ------------ CMP ------------
+          when "0011100111" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
           when "0011101101" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
+          when "0011101111" =>
             -- Next State
             next_state <= S4g;
             -- Outputs
@@ -873,7 +1023,17 @@ begin
             next_state <= S4g;
             -- Outputs
             ------------ CMP ------------
+          when "0011110111" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
           when "0011111101" =>
+            -- Next State
+            next_state <= S4g;
+            -- Outputs
+            ------------ CMP ------------
+          when "0011111111" =>
             -- Next State
             next_state <= S4g;
             -- Outputs
@@ -3443,7 +3603,17 @@ begin
             next_state <= S2b;
             -- Outputs
             ------------ DP ------------
+          when "0000000011" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
           when "0000001001" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
+          when "0000001011" =>
             -- Next State
             next_state <= S2b;
             -- Outputs
@@ -3453,7 +3623,17 @@ begin
             next_state <= S2b;
             -- Outputs
             ------------ DP ------------
+          when "0000010011" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
           when "0000011001" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
+          when "0000011011" =>
             -- Next State
             next_state <= S2b;
             -- Outputs
@@ -3463,7 +3643,17 @@ begin
             next_state <= S2b;
             -- Outputs
             ------------ DP ------------
+          when "0000100011" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
           when "0000101001" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
+          when "0000101011" =>
             -- Next State
             next_state <= S2b;
             -- Outputs
@@ -3473,7 +3663,17 @@ begin
             next_state <= S2b;
             -- Outputs
             ------------ DP ------------
+          when "0000110011" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
           when "0000111001" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
+          when "0000111011" =>
             -- Next State
             next_state <= S2b;
             -- Outputs
@@ -3483,7 +3683,17 @@ begin
             next_state <= S2b;
             -- Outputs
             ------------ DP ------------
+          when "0001000011" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
           when "0001001001" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
+          when "0001001011" =>
             -- Next State
             next_state <= S2b;
             -- Outputs
@@ -3493,7 +3703,17 @@ begin
             next_state <= S2b;
             -- Outputs
             ------------ DP ------------
+          when "0001010011" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
           when "0001011001" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
+          when "0001011011" =>
             -- Next State
             next_state <= S2b;
             -- Outputs
@@ -3503,7 +3723,17 @@ begin
             next_state <= S2b;
             -- Outputs
             ------------ DP ------------
+          when "0001100011" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
           when "0001101001" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
+          when "0001101011" =>
             -- Next State
             next_state <= S2b;
             -- Outputs
@@ -3513,7 +3743,17 @@ begin
             next_state <= S2b;
             -- Outputs
             ------------ DP ------------
+          when "0001110011" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
           when "0001111001" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
+          when "0001111011" =>
             -- Next State
             next_state <= S2b;
             -- Outputs
@@ -3523,7 +3763,17 @@ begin
             next_state <= S2b;
             -- Outputs
             ------------ DP ------------
+          when "0010000011" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
           when "0010001001" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
+          when "0010001011" =>
             -- Next State
             next_state <= S2b;
             -- Outputs
@@ -3533,7 +3783,17 @@ begin
             next_state <= S2b;
             -- Outputs
             ------------ DP ------------
+          when "0010010011" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
           when "0010011001" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
+          when "0010011011" =>
             -- Next State
             next_state <= S2b;
             -- Outputs
@@ -3543,7 +3803,17 @@ begin
             next_state <= S2b;
             -- Outputs
             ------------ DP ------------
+          when "0010100011" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
           when "0010101001" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
+          when "0010101011" =>
             -- Next State
             next_state <= S2b;
             -- Outputs
@@ -3553,7 +3823,17 @@ begin
             next_state <= S2b;
             -- Outputs
             ------------ DP ------------
+          when "0010110011" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
           when "0010111001" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
+          when "0010111011" =>
             -- Next State
             next_state <= S2b;
             -- Outputs
@@ -3563,7 +3843,17 @@ begin
             next_state <= S2b;
             -- Outputs
             ------------ DP ------------
+          when "0011000011" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
           when "0011001001" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
+          when "0011001011" =>
             -- Next State
             next_state <= S2b;
             -- Outputs
@@ -3573,7 +3863,17 @@ begin
             next_state <= S2b;
             -- Outputs
             ------------ DP ------------
+          when "0011010011" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
           when "0011011001" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
+          when "0011011011" =>
             -- Next State
             next_state <= S2b;
             -- Outputs
@@ -3583,7 +3883,17 @@ begin
             next_state <= S2b;
             -- Outputs
             ------------ DP ------------
+          when "0011100011" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
           when "0011101001" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
+          when "0011101011" =>
             -- Next State
             next_state <= S2b;
             -- Outputs
@@ -3593,7 +3903,17 @@ begin
             next_state <= S2b;
             -- Outputs
             ------------ DP ------------
+          when "0011110011" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
           when "0011111001" =>
+            -- Next State
+            next_state <= S2b;
+            -- Outputs
+            ------------ DP ------------
+          when "0011111011" =>
             -- Next State
             next_state <= S2b;
             -- Outputs
@@ -3603,7 +3923,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0100000011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0100000101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0100000111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3613,7 +3943,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0100001011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0100001101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0100001111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3623,7 +3963,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0100010011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0100010101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0100010111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3633,7 +3983,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0100011011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0100011101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0100011111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3643,7 +4003,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0100100011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0100100101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0100100111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3653,7 +4023,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0100101011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0100101101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0100101111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3663,7 +4043,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0100110011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0100110101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0100110111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3673,7 +4063,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0100111011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0100111101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0100111111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3683,7 +4083,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0101000011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0101000101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0101000111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3693,7 +4103,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0101001011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0101001101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0101001111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3703,7 +4123,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0101010011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0101010101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0101010111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3713,7 +4143,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0101011011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0101011101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0101011111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3723,7 +4163,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0101100011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0101100101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0101100111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3733,7 +4183,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0101101011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0101101101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0101101111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3743,7 +4203,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0101110011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0101110101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0101110111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3753,7 +4223,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0101111011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0101111101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0101111111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3763,7 +4243,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0110000011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0110000101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0110000111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3773,7 +4263,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0110001011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0110001101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0110001111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3783,7 +4283,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0110010011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0110010101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0110010111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3793,7 +4303,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0110011011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0110011101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0110011111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3803,7 +4323,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0110100011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0110100101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0110100111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3813,7 +4343,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0110101011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0110101101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0110101111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3823,7 +4363,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0110110011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0110110101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0110110111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3833,7 +4383,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0110111011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0110111101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0110111111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3843,7 +4403,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0111000011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0111000101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0111000111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3853,7 +4423,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0111001011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0111001101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0111001111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3863,7 +4443,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0111010011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0111010101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0111010111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3873,7 +4463,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0111011011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0111011101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0111011111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3883,7 +4483,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0111100011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0111100101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0111100111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3893,7 +4503,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0111101011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0111101101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0111101111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3903,7 +4523,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0111110011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0111110101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0111110111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
@@ -3913,7 +4543,17 @@ begin
             next_state <= S2a;
             -- Outputs
             ------------ LDR ------------
+          when "0111111011" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
           when "0111111101" =>
+            -- Next State
+            next_state <= S2a;
+            -- Outputs
+            ------------ LDR ------------
+          when "0111111111" =>
             -- Next State
             next_state <= S2a;
             -- Outputs
