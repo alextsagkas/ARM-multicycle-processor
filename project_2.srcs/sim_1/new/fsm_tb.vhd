@@ -132,7 +132,7 @@ begin
 
     rst_tb <= '0';
 
-    -- LDR : S0 -> S1a -> S2a -> S3 -> S4a
+    -- LDR : S0 -> S1 -> S2a -> S3 -> S4a
     op_tb          <= "01";
     s_or_l_tb      <= '1';
     r_d_tb         <= "0101";
@@ -145,10 +145,10 @@ begin
     state            => "S0",
     ir_write_correct => '1'
     );
-    -- S1a
+    -- S1
     wait for clk_period/2;
     test(
-    state => "S1a"
+    state => "S1"
     );
     -- S2a
     wait for clk_period;
@@ -169,7 +169,7 @@ begin
     pc_write_correct  => '1'
     );
 
-    -- LDR : S0 -> S1a -> S2a -> S3 -> S4b
+    -- LDR : S0 -> S1 -> S2a -> S3 -> S4b
     wait for clk_period;
     op_tb          <= "01";
     s_or_l_tb      <= '1';
@@ -182,10 +182,10 @@ begin
     state            => "S0",
     ir_write_correct => '1'
     );
-    -- S1a
+    -- S1
     wait for clk_period;
     test(
-    state => "S1a"
+    state => "S1"
     );
     -- S2a
     wait for clk_period;
@@ -206,7 +206,7 @@ begin
     pc_write_correct => '1'
     );
 
-    -- LDR : S0 -> S1a -> S4c
+    -- LDR : S0 -> S1 -> S4c
     wait for clk_period;
     op_tb          <= "01";
     s_or_l_tb      <= '1';
@@ -219,10 +219,10 @@ begin
     state            => "S0",
     ir_write_correct => '1'
     );
-    -- S1a
+    -- S1
     wait for clk_period;
     test(
-    state => "S1a"
+    state => "S1"
     );
     -- S4c
     wait for clk_period;
@@ -233,7 +233,7 @@ begin
 
     report "LDR instructions finished successfully!";
 
-    -- STR : S0 -> S1a -> S2a -> S4d
+    -- STR : S0 -> S1 -> S2a -> S4d
     wait for clk_period;
     op_tb          <= "01";
     s_or_l_tb      <= '0';
@@ -246,10 +246,10 @@ begin
     state            => "S0",
     ir_write_correct => '1'
     );
-    -- S1a
+    -- S1
     wait for clk_period;
     test(
-    state => "S1a"
+    state => "S1"
     );
     -- S2a
     wait for clk_period;
@@ -264,7 +264,7 @@ begin
     mem_write_correct => '1',
     pc_write_correct  => '1'
     );
-    -- STR : S0 -> S1a -> S4c
+    -- STR : S0 -> S1 -> S4c
     wait for clk_period;
     op_tb          <= "01";
     s_or_l_tb      <= '0';
@@ -277,10 +277,10 @@ begin
     state            => "S0",
     ir_write_correct => '1'
     );
-    -- S1a
+    -- S1
     wait for clk_period;
     test(
-    state => "S1a"
+    state => "S1"
     );
     -- S4c
     wait for clk_period;
@@ -291,7 +291,7 @@ begin
 
     report "STR instructions finished successfully!";
 
-    -- DP : S0 -> S1a -> S2b -> S4a
+    -- DP : S0 -> S1 -> S2b -> S4a
     wait for clk_period;
     op_tb          <= "00";
     s_or_l_tb      <= '0';
@@ -304,10 +304,10 @@ begin
     state            => "S0",
     ir_write_correct => '1'
     );
-    -- S1a
+    -- S1
     wait for clk_period;
     test(
-    state => "S1a"
+    state => "S1"
     );
     -- S2b
     wait for clk_period;
@@ -321,7 +321,7 @@ begin
     reg_write_correct => '1',
     pc_write_correct  => '1'
     );
-    -- DP : S0 -> S1a -> S2b -> S4b
+    -- DP : S0 -> S1 -> S2b -> S4b
     wait for clk_period;
     op_tb          <= "00";
     s_or_l_tb      <= '0';
@@ -334,10 +334,10 @@ begin
     state            => "S0",
     ir_write_correct => '1'
     );
-    -- S1a
+    -- S1
     wait for clk_period;
     test(
-    state => "S1a"
+    state => "S1"
     );
     -- S2b
     wait for clk_period;
@@ -352,7 +352,7 @@ begin
     pc_write_correct => '1'
     );
 
-    -- DP : S0 -> S1a -> S2b -> S4e
+    -- DP : S0 -> S1 -> S2b -> S4e
     wait for clk_period;
     op_tb          <= "00";
     s_or_l_tb      <= '1';
@@ -365,10 +365,10 @@ begin
     state            => "S0",
     ir_write_correct => '1'
     );
-    -- S1a
+    -- S1
     wait for clk_period;
     test(
-    state => "S1a"
+    state => "S1"
     );
     -- S2b
     wait for clk_period;
@@ -384,7 +384,7 @@ begin
     pc_write_correct    => '1'
     );
 
-    -- DP : S0 -> S1a -> S2b -> S4f
+    -- DP : S0 -> S1 -> S2b -> S4f
     wait for clk_period;
     op_tb          <= "00";
     s_or_l_tb      <= '1';
@@ -397,10 +397,10 @@ begin
     state            => "S0",
     ir_write_correct => '1'
     );
-    -- S1a
+    -- S1
     wait for clk_period;
     test(
-    state => "S1a"
+    state => "S1"
     );
     -- S2b
     wait for clk_period;
@@ -416,7 +416,7 @@ begin
     pc_write_correct    => '1'
     );
 
-    -- DP : S0 -> S1a -> S4c
+    -- DP : S0 -> S1 -> S4c
     wait for clk_period;
     op_tb          <= "00";
     s_or_l_tb      <= '0';
@@ -429,10 +429,10 @@ begin
     state            => "S0",
     ir_write_correct => '1'
     );
-    -- S1a
+    -- S1
     wait for clk_period;
     test(
-    state => "S1a"
+    state => "S1"
     );
     -- S4c
     wait for clk_period;
@@ -443,7 +443,7 @@ begin
 
     report "DP instructions finished successfully!";
 
-    -- CMP : S0 -> S1a -> S4g
+    -- CMP : S0 -> S1 -> S4g
     wait for clk_period;
     op_tb          <= "00";
     s_or_l_tb      <= '0';
@@ -456,10 +456,10 @@ begin
     state            => "S0",
     ir_write_correct => '1'
     );
-    -- S1a
+    -- S1
     wait for clk_period;
     test(
-    state => "S1a"
+    state => "S1"
     );
     -- S4g
     wait for clk_period;
@@ -469,7 +469,7 @@ begin
     pc_write_correct    => '1'
     );
 
-    -- CMP : S0 -> S1a -> S4c
+    -- CMP : S0 -> S1 -> S4c
     wait for clk_period;
     op_tb          <= "00";
     s_or_l_tb      <= '0';
@@ -482,10 +482,10 @@ begin
     state            => "S0",
     ir_write_correct => '1'
     );
-    -- S1a
+    -- S1
     wait for clk_period;
     test(
-    state => "S1a"
+    state => "S1"
     );
     -- S4c
     wait for clk_period;
@@ -496,7 +496,7 @@ begin
 
     report "CMP instruction finished successfully!";
 
-    -- B : S0 -> S1a -> S4h
+    -- B : S0 -> S1 -> S4h
     wait for clk_period;
     op_tb          <= "10";
     s_or_l_tb      <= '0';
@@ -509,10 +509,10 @@ begin
     state            => "S0",
     ir_write_correct => '1'
     );
-    -- S1a
+    -- S1
     wait for clk_period;
     test(
-    state => "S1a"
+    state => "S1"
     );
     -- S4h
     wait for clk_period;
@@ -522,7 +522,7 @@ begin
     pc_write_correct => '1'
     );
 
-    -- B : S0 -> S1a -> S4c
+    -- B : S0 -> S1 -> S4c
     wait for clk_period;
     op_tb          <= "10";
     s_or_l_tb      <= '0';
@@ -535,10 +535,10 @@ begin
     state            => "S0",
     ir_write_correct => '1'
     );
-    -- S1a
+    -- S1
     wait for clk_period;
     test(
-    state => "S1a"
+    state => "S1"
     );
     -- S4c
     wait for clk_period;
@@ -547,7 +547,7 @@ begin
     pc_write_correct => '1'
     );
 
-    -- B : S0 -> S1b -> S4h
+    -- B : S0 -> S1 -> S4i
     wait for clk_period;
     op_tb          <= "10";
     s_or_l_tb      <= '0';
@@ -560,21 +560,21 @@ begin
     state            => "S0",
     ir_write_correct => '1'
     );
-    -- S1b
+    -- S1
     wait for clk_period;
     test(
-    state             => "S1b",
-    reg_write_correct => '1'
+    state => "S1"
     );
-    -- S4h
+    -- S4i
     wait for clk_period;
     test(
-    state            => "S4h",
-    pc_src_correct   => "01",
-    pc_write_correct => '1'
+    state             => "S4h",
+    reg_write_correct => '1',
+    pc_src_correct    => "01",
+    pc_write_correct  => '1'
     );
 
-    -- B : S0 -> S1b -> S4c
+    -- B : S0 -> S1 -> S4c
     wait for clk_period;
     op_tb          <= "10";
     s_or_l_tb      <= '0';
@@ -587,10 +587,10 @@ begin
     state            => "S0",
     ir_write_correct => '1'
     );
-    -- S1b
+    -- S1
     wait for clk_period;
     test(
-    state => "S1b"
+    state => "S1"
     );
     -- S4c
     wait for clk_period;
