@@ -373,7 +373,7 @@
 ###############################################################################
 #
 # set_property -dict {PACKAGE_PIN P16 IOSTANDARD LVCMOS33} [get_ports {reset_rtl}]; # "BTNC" 
-set_property -dict {PACKAGE_PIN Y9 IOSTANDARD LVCMOS33} [get_ports {clk}]; # "GCLK"
+set_property -dict {PACKAGE_PIN Y9 IOSTANDARD LVCMOS33} [get_ports clk]; # "GCLK"
 # set_property -dict {PACKAGE_PIN T22 IOSTANDARD LVCMOS33} [get_ports {leds_8bits[0]}]; # "LD0" 
 # set_property -dict {PACKAGE_PIN T21 IOSTANDARD LVCMOS33} [get_ports {leds_8bits[1]}]; # "LD1" 
 # set_property -dict {PACKAGE_PIN U22 IOSTANDARD LVCMOS33} [get_ports {leds_8bits[2]}]; # "LD2" 
@@ -383,4 +383,6 @@ set_property -dict {PACKAGE_PIN Y9 IOSTANDARD LVCMOS33} [get_ports {clk}]; # "GC
 # set_property -dict {PACKAGE_PIN U19 IOSTANDARD LVCMOS33} [get_ports {leds_8bits[6]}]; # "LD6" 
 # set_property -dict {PACKAGE_PIN U14 IOSTANDARD LVCMOS33} [get_ports {leds_8bits[7]}]; # "LD7"
 #
-create_clock -period 10.0 -name clk -waveform {0.000 5.000} [get_ports {clk}];
+create_clock -period 8.361 -name clk -waveform {0.000 4.181} [get_ports clk]
+# Set output registers to IOB
+set_property IOB TRUE [all_outputs]
