@@ -19,7 +19,7 @@ end entity alu;
 
 architecture behavioral of alu is
 begin
-  process (source_1, source_2, shamt5, control)
+  process (source_1, source_2, shamt5, sh, control)
     -- Addition & Subtraction
     variable source_1_v : signed (N + 1 downto 0);
     variable source_2_v : signed (N + 1 downto 0);
