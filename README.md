@@ -1,5 +1,9 @@
 # ARM Multicycle Processor
 
+Below are provided the details of the ARM multicycle processor that was implemented as a project for the Computer Architecture course at the University of Athens.
+
+Specifically, the information is depicted pictorially and covers the instruction fields, the implemented instructions, the datapath, the control unit, and the recommendation for the addition of the `ROR` command.
+
 ## Instruction Implemented
 
 ### Data Processing
@@ -43,9 +47,17 @@ The control signals that come from the control unit are drawn in cyan color.
 
 ![control_unit](./README/control_unit.png "control_unit")
 
+### Instruction Decoder
+
+![instruction_decoder](./README/instruction_decoder.png "instruction_decoder")
+
 ### FSM Schematic
 
 ![fsm-schematic](./README/fsm-schematic.png "fsm-schematic")
+
+### Conditional Decoding
+
+![conditional_logic](./README/conditional_logic.png "conditional_logic")
 
 ## Addition Recommendation (Not Implemented)
 
