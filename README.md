@@ -28,8 +28,7 @@
 
 ### Branch
 
--B: ![b](./README/b.png "b")
-
+- B: ![b](./README/b.png "b")
 - BL: ![bl](./README/bl.png "bl")
 
 ## Datapath
