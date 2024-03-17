@@ -6,4 +6,4 @@
 
 <!-- add an image from README/  -->
 
-![adds_i](./README/adds_i.png)
+![adds_i](./README/adds_i.png "adds_i")
