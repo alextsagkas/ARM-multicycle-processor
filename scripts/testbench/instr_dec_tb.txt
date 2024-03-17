@@ -1,0 +1,220 @@
+-- ADD
+test( 
+  op => "00",
+  funct => "10100-",
+  reg_src_correct => "0-0",
+  alu_src_correct => '1',
+  imm_src_correct => "00",
+  alu_control_correct => "000",
+  mem_to_reg_correct => '0',
+  no_write_in_correct => '0',
+  bl_in_correct => '0');
+-- ADD
+test( 
+  op => "00",
+  funct => "00100-",
+  reg_src_correct => "000",
+  alu_src_correct => '0',
+  imm_src_correct => "--",
+  alu_control_correct => "000",
+  mem_to_reg_correct => '0',
+  no_write_in_correct => '0',
+  bl_in_correct => '0');
+-- SUB
+test( 
+  op => "00",
+  funct => "10010-",
+  reg_src_correct => "0-0",
+  alu_src_correct => '1',
+  imm_src_correct => "00",
+  alu_control_correct => "001",
+  mem_to_reg_correct => '0',
+  no_write_in_correct => '0',
+  bl_in_correct => '0');
+-- SUB
+test( 
+  op => "00",
+  funct => "00010-",
+  reg_src_correct => "000",
+  alu_src_correct => '0',
+  imm_src_correct => "--",
+  alu_control_correct => "001",
+  mem_to_reg_correct => '0',
+  no_write_in_correct => '0',
+  bl_in_correct => '0');
+-- CMP
+test( 
+  op => "00",
+  funct => "110101",
+  reg_src_correct => "0-0",
+  alu_src_correct => '1',
+  imm_src_correct => "00",
+  alu_control_correct => "001",
+  mem_to_reg_correct => '-',
+  no_write_in_correct => '1',
+  bl_in_correct => '0');
+-- CMP
+test( 
+  op => "00",
+  funct => "010101",
+  reg_src_correct => "000",
+  alu_src_correct => '0',
+  imm_src_correct => "--",
+  alu_control_correct => "001",
+  mem_to_reg_correct => '-',
+  no_write_in_correct => '1',
+  bl_in_correct => '0');
+-- AND
+test( 
+  op => "00",
+  funct => "10000-",
+  reg_src_correct => "0-0",
+  alu_src_correct => '1',
+  imm_src_correct => "00",
+  alu_control_correct => "010",
+  mem_to_reg_correct => '0',
+  no_write_in_correct => '0',
+  bl_in_correct => '0');
+-- AND
+test( 
+  op => "00",
+  funct => "00000-",
+  reg_src_correct => "000",
+  alu_src_correct => '0',
+  imm_src_correct => "--",
+  alu_control_correct => "010",
+  mem_to_reg_correct => '0',
+  no_write_in_correct => '0',
+  bl_in_correct => '0');
+-- XOR
+test( 
+  op => "00",
+  funct => "10001-",
+  reg_src_correct => "0-0",
+  alu_src_correct => '1',
+  imm_src_correct => "00",
+  alu_control_correct => "011",
+  mem_to_reg_correct => '0',
+  no_write_in_correct => '0',
+  bl_in_correct => '0');
+-- XOR
+test( 
+  op => "00",
+  funct => "00001-",
+  reg_src_correct => "000",
+  alu_src_correct => '0',
+  imm_src_correct => "--",
+  alu_control_correct => "011",
+  mem_to_reg_correct => '0',
+  no_write_in_correct => '0',
+  bl_in_correct => '0');
+-- MOV / NOP
+test( 
+  op => "00",
+  funct => "111010",
+  reg_src_correct => "0--",
+  alu_src_correct => '1',
+  imm_src_correct => "00",
+  alu_control_correct => "100",
+  mem_to_reg_correct => '0',
+  no_write_in_correct => '0',
+  bl_in_correct => '0');
+-- MOV / NOP / LSL / ASR
+test( 
+  op => "00",
+  funct => "011010",
+  reg_src_correct => "00-",
+  alu_src_correct => '0',
+  imm_src_correct => "--",
+  alu_control_correct => "100",
+  mem_to_reg_correct => '0',
+  no_write_in_correct => '0',
+  bl_in_correct => '0');
+-- MVN
+test( 
+  op => "00",
+  funct => "111110",
+  reg_src_correct => "0--",
+  alu_src_correct => '1',
+  imm_src_correct => "00",
+  alu_control_correct => "101",
+  mem_to_reg_correct => '0',
+  no_write_in_correct => '0',
+  bl_in_correct => '0');
+-- MVN
+test( 
+  op => "00",
+  funct => "011110",
+  reg_src_correct => "00-",
+  alu_src_correct => '0',
+  imm_src_correct => "--",
+  alu_control_correct => "101",
+  mem_to_reg_correct => '0',
+  no_write_in_correct => '0',
+  bl_in_correct => '0');
+-- LDR
+test( 
+  op => "01",
+  funct => "011001",
+  reg_src_correct => "0-0",
+  alu_src_correct => '1',
+  imm_src_correct => "01",
+  alu_control_correct => "000",
+  mem_to_reg_correct => '1',
+  no_write_in_correct => '0',
+  bl_in_correct => '0');
+-- LDR
+test( 
+  op => "01",
+  funct => "010001",
+  reg_src_correct => "0-0",
+  alu_src_correct => '1',
+  imm_src_correct => "01",
+  alu_control_correct => "001",
+  mem_to_reg_correct => '1',
+  no_write_in_correct => '0',
+  bl_in_correct => '0');
+-- STR
+test( 
+  op => "01",
+  funct => "011000",
+  reg_src_correct => "-10",
+  alu_src_correct => '1',
+  imm_src_correct => "01",
+  alu_control_correct => "000",
+  mem_to_reg_correct => '-',
+  no_write_in_correct => '0',
+  bl_in_correct => '0');
+-- STR
+test( 
+  op => "01",
+  funct => "010000",
+  reg_src_correct => "-10",
+  alu_src_correct => '1',
+  imm_src_correct => "01",
+  alu_control_correct => "001",
+  mem_to_reg_correct => '-',
+  no_write_in_correct => '0',
+  bl_in_correct => '0');
+-- B
+test( 
+  op => "10",
+  funct => "10----",
+  reg_src_correct => "--1",
+  alu_src_correct => '1',
+  imm_src_correct => "10",
+  alu_control_correct => "000",
+  mem_to_reg_correct => '-',
+  no_write_in_correct => '0',
+  bl_in_correct => '0');
+-- BL
+test( 
+  op => "10",
+  funct => "11----",
+  reg_src_correct => "1-1",
+  alu_src_correct => '1',
+  imm_src_correct => "10",
+  alu_control_correct => "000",
+  mem_to_reg_correct => '-',
+  no_write_in_correct => '0',
+  bl_in_correct => '1');
