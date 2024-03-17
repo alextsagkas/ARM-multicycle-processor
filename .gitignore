@@ -17,3 +17,6 @@ scripts/env/*
 
 # Remove the zip file
 alexandros_tsagkaropoulos-7110132300214.zip
+
+# Ignore .DS_Store files recursively
+**/.DS_Store
