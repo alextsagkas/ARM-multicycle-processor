@@ -23,7 +23,7 @@ Specifically, the information is depicted pictorially and covers the instruction
 - `LSL`: ![lsl](./README/lsl.png "lsl")
 - `ASR`: ![asr](./README/asr.png "asr")
 - `MVN-I`: ![mvn_i](./README/mvn_i.png "mvn_i")
-- `MVN_R`: ![mvn_r](./README/mvn_r.png "mvn_r")
+- `MVN-R`: ![mvn_r](./README/mvn_r.png "mvn_r")
 
 ### Memory Access
 
