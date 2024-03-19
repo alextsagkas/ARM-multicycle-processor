@@ -148,9 +148,9 @@ def replace_with_binary_numbers(
         list[str]: A list with all the strings with the replaced characters.
     """
     # Check fo the type of the input
-    if type(strings_array) == str:
+    if isinstance(strings_array, str):
         strings_array = [strings_array]
-    elif type(strings_array) != list:
+    elif not isinstance(strings_array, list):
         raise TypeError("strings_array must be a list or a string")
 
     # Loop through the strings and replace the characters
@@ -313,7 +313,7 @@ def print_case(f: TextIO,
             if (next_state_change):
                 f.write(f"{4*' '}end case;\n")
 
-    f.write(f"\nend case;")
+    f.write("\nend case;")
 
 
 if __name__ == "__main__":
