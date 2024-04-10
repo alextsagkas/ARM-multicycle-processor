@@ -17,6 +17,7 @@ architecture sim of alu_tb is
     port (
       source_1 : in std_logic_vector(N_tb - 1 downto 0);
       source_2 : in std_logic_vector(N_tb - 1 downto 0);
+      imm      : in std_logic;
       shamt5   : in std_logic_vector(4 downto 0);
       sh       : in std_logic_vector(1 downto 0);
       control  : in std_logic_vector(2 downto 0);
@@ -27,6 +28,7 @@ architecture sim of alu_tb is
   -- Singal declaration
   signal source_1_tb : std_logic_vector(N_tb - 1 downto 0);
   signal source_2_tb : std_logic_vector(N_tb - 1 downto 0);
+  signal imm_tb      : std_logic;
   signal shamt5_tb   : std_logic_vector(4 downto 0);
   signal sh_tb       : std_logic_vector(1 downto 0);
   signal control_tb  : std_logic_vector(2 downto 0);
@@ -41,6 +43,7 @@ begin
   port map(
     source_1 => source_1_tb,
     source_2 => source_2_tb,
+    imm      => imm_tb,
     shamt5   => shamt5_tb,
     sh       => sh_tb,
     control  => control_tb,
@@ -53,6 +56,7 @@ begin
     procedure report_errors (
       source_1       : in std_logic_vector (N_tb - 1 downto 0);
       source_2       : in std_logic_vector (N_tb - 1 downto 0);
+      imm            : in std_logic;
       shamt5         : in std_logic_vector (4 downto 0);
       sh             : in std_logic_vector (1 downto 0);
       control        : in std_logic_vector (2 downto 0);
@@ -69,6 +73,7 @@ begin
         report
           "source_1 = " & to_bstring(source_1) & ", " &
           "source_2 = " & to_bstring(source_2) & ", " &
+          "imm = " & to_bstring(imm) & ", " &
           "shamt5 = " & to_bstring(shamt5) & ", " &
           "sh = " & to_bstring(sh) & ", " &
           "control = " & to_bstring(control) & " | " &
@@ -84,6 +89,7 @@ begin
     procedure test (
       source_1       : in std_logic_vector (N_tb - 1 downto 0);
       source_2       : in std_logic_vector (N_tb - 1 downto 0);
+      imm            : in std_logic;
       shamt5         : in std_logic_vector (4 downto 0);
       sh             : in std_logic_vector (1 downto 0);
       control        : in std_logic_vector (2 downto 0);
@@ -93,6 +99,7 @@ begin
       wait for 10 ns;
       source_1_tb <= source_1;
       source_2_tb <= source_2;
+      imm_tb      <= imm;
       shamt5_tb   <= shamt5;
       sh_tb       <= sh;
       control_tb  <= control;
@@ -101,6 +108,7 @@ begin
       report_errors(
       source_1       => source_1,
       source_2       => source_2,
+      imm            => imm,
       shamt5         => shamt5,
       sh             => sh,
       control        => control,
@@ -118,6 +126,7 @@ begin
     test(
     source_1       => "01000000000000000000000000000000",
     source_2       => "00100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "000",
@@ -127,6 +136,7 @@ begin
     test(
     source_1       => "01000000000000000000000000000000",
     source_2       => "10100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "000",
@@ -136,6 +146,7 @@ begin
     test(
     source_1       => "00100000000000000000000000000000",
     source_2       => "11100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "000",
@@ -145,6 +156,7 @@ begin
     test(
     source_1       => "01100000000000000000000000000000",
     source_2       => "00100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "000",
@@ -154,6 +166,7 @@ begin
     test(
     source_1       => "10000000000000000000000000000000",
     source_2       => "11100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "000",
@@ -166,6 +179,7 @@ begin
     test(
     source_1       => "01000000000000000000000000000000",
     source_2       => "00100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "001",
@@ -175,6 +189,7 @@ begin
     test(
     source_1       => "00100000000000000000000000000000",
     source_2       => "01100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "001",
@@ -184,6 +199,7 @@ begin
     test(
     source_1       => "00100000000000000000000000000000",
     source_2       => "00100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "001",
@@ -193,6 +209,7 @@ begin
     test(
     source_1       => "01100000000000000000000000000000",
     source_2       => "11100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "001",
@@ -202,6 +219,7 @@ begin
     test(
     source_1       => "10000000000000000000000000000000",
     source_2       => "00100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "001",
@@ -214,6 +232,7 @@ begin
     test(
     source_1       => "10100000000000000000000000000000",
     source_2       => "01100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "010",
@@ -223,6 +242,7 @@ begin
     test(
     source_1       => "00000000000000000000000000000000",
     source_2       => "11100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "010",
@@ -232,6 +252,7 @@ begin
     test(
     source_1       => "10100000000000000000000000000000",
     source_2       => "10000000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "010",
@@ -244,6 +265,7 @@ begin
     test(
     source_1       => "11100000000000000000000000000000",
     source_2       => "10100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "011",
@@ -253,6 +275,7 @@ begin
     test(
     source_1       => "11100000000000000000000000000000",
     source_2       => "11100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "011",
@@ -262,6 +285,7 @@ begin
     test(
     source_1       => "01000000000000000000000000000000",
     source_2       => "11100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "011",
@@ -274,6 +298,7 @@ begin
     test(
     source_1       => "00000000000000000000000000000000",
     source_2       => "01000000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "100",
@@ -283,6 +308,7 @@ begin
     test(
     source_1       => "00000000000000000000000000000000",
     source_2       => "00000000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "100",
@@ -292,6 +318,7 @@ begin
     test(
     source_1       => "00000000000000000000000000000000",
     source_2       => "00100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00001",
     sh             => "00",
     control        => "100",
@@ -300,6 +327,7 @@ begin
     test(
     source_1       => "00000000000000000000000000000000",
     source_2       => "00100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00010",
     sh             => "00",
     control        => "100",
@@ -308,6 +336,7 @@ begin
     test(
     source_1       => "00000000000000000000000000000000",
     source_2       => "00100000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00011",
     sh             => "00",
     control        => "100",
@@ -317,6 +346,7 @@ begin
     test(
     source_1       => "00000000000000000000000000000000",
     source_2       => "10000000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00001",
     sh             => "10",
     control        => "100",
@@ -325,6 +355,7 @@ begin
     test(
     source_1       => "00000000000000000000000000000000",
     source_2       => "10000000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00010",
     sh             => "10",
     control        => "100",
@@ -333,6 +364,7 @@ begin
     test(
     source_1       => "00000000000000000000000000000000",
     source_2       => "10000000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00011",
     sh             => "10",
     control        => "100",
@@ -344,6 +376,7 @@ begin
     test(
     source_1       => "00000000000000000000000000000000",
     source_2       => "10000000000000000000000000000000",
+    imm            => '0',
     shamt5         => "00000",
     sh             => "00",
     control        => "101",

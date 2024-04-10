@@ -9,6 +9,7 @@ entity alu is
   port (
     source_1 : in std_logic_vector(N - 1 downto 0);
     source_2 : in std_logic_vector(N - 1 downto 0);
+    imm      : in std_logic;
     shamt5   : in std_logic_vector(4 downto 0);
     sh       : in std_logic_vector(1 downto 0);
     control  : in std_logic_vector(2 downto 0);
@@ -126,25 +127,33 @@ begin
 
         -- Shifts --
       when "100" =>
-        shifts : case sh is
-            -- MOV | LSL (S=0)
-          when "00" =>
-            MOV_LSL : case shamt5 is
-                -- MOV & NOP (S=0)
-              when "00000" =>
-                result <= source_2;
-                -- LSL (S=0)
-              when others =>
-                result <= std_logic_vector(
-                  shift_left(signed(source_2), to_integer(unsigned(shamt5))));
-            end case MOV_LSL;
-            -- ASR (S=0)
-          when "10" =>
-            result <= std_logic_vector(shift_right(signed(source_2), to_integer(unsigned(shamt5))));
-            -- Others
+        immediate : case imm is
+          when '0' =>
+            shifts : case sh is
+                -- MOV | LSL (S=0)
+              when "00" =>
+                MOV_LSL : case shamt5 is
+                    -- MOV & NOP (S=0)
+                  when "00000" =>
+                    result <= source_2;
+                    -- LSL (S=0)
+                  when others =>
+                    result <= std_logic_vector(
+                      shift_left(signed(source_2), to_integer(unsigned(shamt5))));
+                end case MOV_LSL;
+                -- ASR (S=0)
+              when "10" =>
+                result <= std_logic_vector(shift_right(signed(source_2), to_integer(unsigned(shamt5))));
+                -- Others
+              when others       =>
+                result <= (others => '0');
+            end case shifts;
+          when '1' =>
+            -- MOV
+            result <= source_2;
           when others       =>
             result <= (others => '0');
-        end case shifts;
+        end case immediate;
 
         -- MVN (S=0)
       when "101" =>

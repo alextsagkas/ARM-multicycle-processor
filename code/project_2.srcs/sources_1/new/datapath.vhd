@@ -111,6 +111,7 @@ architecture structural of datapath is
     port (
       source_1 : in std_logic_vector(N - 1 downto 0);
       source_2 : in std_logic_vector(N - 1 downto 0);
+      imm      : in std_logic;
       shamt5   : in std_logic_vector(4 downto 0);
       sh       : in std_logic_vector(1 downto 0);
       control  : in std_logic_vector(2 downto 0);
@@ -384,6 +385,7 @@ begin
   port map(
     source_1 => ALU_source_a,
     source_2 => ALU_source_b,
+    imm      => IR_output(25),
     shamt5   => IR_output(11 downto 7),
     sh       => IR_output(6 downto 5),
     control  => alu_control,
